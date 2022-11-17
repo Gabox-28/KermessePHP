@@ -1,0 +1,29 @@
+.container-left{
+    align-items: center;
+}
+
+.row{
+    background-color: #293d5d;
+    border-radius: 10px;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 1100px) {
+    .row{
+        width: 90%;
+        margin: 25px auto;
+    }
+}
+
+h2{
+    text-align: center;
+    color: white;
+}
+
+.img{
+    width: 400px;
+}

@@ -1,9 +1,15 @@
 <?php
 ?>
 
+<html>
+<head>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/navBar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
 <nav>
     <div class="navbar-left">
-        <img src="./views/img/FAO_logo.png" class="logo" alt="Logo FAO">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/FAO_logo.svg/2017px-FAO_logo.svg.png" class="logo" alt="Logo FAO">
         <ul>
             <li>
                 <a href="index.php">Inicio</a>
@@ -18,13 +24,9 @@
     </div>
 
     <div class="navbar-right">
-        <ul>
-            <li>
-                <a href="/">Bievenido</a>
-            </li>
-            <li>
-                <a href="../negocio/logout.php">Cerrar sesión</a>
-            </li>
-        </ul>
+        <a href="../negocio/logout.php" class="btn">Cerrar sesión</a>
     </div>
 </nav>
+<body>
+</body>
+</html>

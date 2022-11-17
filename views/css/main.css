@@ -12,3 +12,15 @@ body{
     color: white;
     font-family: 'Rubik', sans-serif;
 }
+
+.btn{
+    display: inline-block;
+    padding: 10px 30px;
+    margin-top: 20px;
+    border-radius: 18px;
+    background: linear-gradient(to right, #33ffff, #86ffd5);
+    color: #282a35;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
