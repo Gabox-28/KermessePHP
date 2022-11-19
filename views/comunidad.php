@@ -4,6 +4,7 @@ include_once 'headerSO.php';
 
 $idForm = $_GET['ID'];
 
+
 $comunidad = new tbl_comunidad();
 $datos = $comunidad->verComunidad($idForm);
 ?>
@@ -18,23 +19,27 @@ $datos = $comunidad->verComunidad($idForm);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <section>
+    <section class="title">
         <div class="container">
-            <?php
-                    $row = $datos->fetch_array();
-                    $nombre = $row['nombre'];
-                    $responsable = $row['responsable'];
-                    $desc_contribucion = $row['desc_contribucion'];
-                    $estado = $row['estado'];
-            ?>
-            <div class="row">
-                <div class="container">
-                    <h2><?php echo $nombre?></h2>
+            <div class="information">
+                <?php
+                $row = $datos->fetch_array();
+                $nombre = $row['nombre'];
+                $responsable = $row['responsable'];
+                $desc_contribucion = $row['desc_contribucion'];
+                $estado = $row['estado'];
+                ?>
+
+                <h2><?php echo $nombre?></h2>
+                <div class="captions">
                     <h3>Responsable: <?php echo $responsable?></h3>
                     <h3>Descripción de la contribución: <?php echo $desc_contribucion?></h3>
-                    <h3>Estado: <?php echo $estado?></h3>
                 </div>
             </div>
+            <div class="image">
+                <img class="img-title" src="img/shop2.jpg" alt="">
+            </div>
+
         </div>
     </section>
 </body>

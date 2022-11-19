@@ -42,17 +42,3 @@ h2{
 h2:hover{
     color: gray;
 }
-
-.nombre{
-    background-color: #293d5d;
-    color: #fff;
-    border: none;
-    font-size: 24px;
-    font-weight: bold;
-    font-family: 'Rubik', sans-serif;
-    cursor: pointer;
-}
-
-.nombre:hover{
-    color: gray;
-}

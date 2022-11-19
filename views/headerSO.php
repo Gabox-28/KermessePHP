@@ -12,13 +12,16 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/FAO_logo.svg/2017px-FAO_logo.svg.png" class="logo" alt="Logo FAO">
         <ul>
             <li>
-                <a href="index.php">Inicio</a>
+                <a href="http://localhost:63342/Kermesse/index.php">Inicio</a>
             </li>
             <li>
-                <a href="/">Comunidades</a>
+                <a href="http://localhost:63342/Kermesse/negocio/manage_comunidades.php">Comunidades</a>
             </li>
             <li>
                 <a href="/">Productos</a>
+            </li>
+            <li>
+                <a href="http://localhost:63342/Kermesse/views/formTickets.php">Bonos</a>
             </li>
         </ul>
     </div>

@@ -20,7 +20,7 @@
 }
 
 .form-group{
-    margin-top: 20px;
+    margin-top: 0;
     width: 320px;
     margin-left: auto;
     margin-right: auto;
@@ -32,7 +32,7 @@
     height: 40px;
     border-radius: 10px;
     border: none;
-    margin-top: 20px;
+
     padding-left: 10px;
     padding-right: 10px;
     outline: none;
@@ -52,4 +52,9 @@
     color: white;
     font-weight: 700;
     cursor: pointer;
+}
+
+.advert-txt{
+    color: #ff3a3a;
+    margin-top: 10px;
 }

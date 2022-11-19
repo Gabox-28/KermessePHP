@@ -14,9 +14,8 @@ if(isset($_POST['user']) && isset($_POST['pwd'])){
 
         //$user->setUsuario($userForm);
 
-        header('Location: ../index.php');
+        header('location: ../index.php');
     }else{
-        $errorLogin = "Nombre de usuario y/o contraseña incorrectos";
-        echo "error";
+        header('location: ../views/formLogin.php?error=1');
     }
 }

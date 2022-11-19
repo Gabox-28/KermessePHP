@@ -1,14 +1,16 @@
 <?php
 include_once 'negocio/user_session.php';
+require_once './controladores/main_controller.php';
+require_once './controladores/main_cliente_controller.php';
 
 $userSession = new user_session();
 
 if(isset($_SESSION['user'])) {
-    include_once 'views/headerSO.php';
+    $controller = new main_cliente_controller();
+    $controller->indexCliente();
 }else{
-    include_once 'views/headerSC.php';
+    $controller = new Main_controller();
+    $controller->indexMain();
 }
-
-include_once 'views/main.php';
 ?>
 

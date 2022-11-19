@@ -12,7 +12,7 @@
 <section class="form-container">
     <div class="form">
         <h1 class="title">Registrarse</h1>
-        <form action="../negocio/login.php" method="POST">
+        <form action="../negocio/signin.php" method="POST">
             <div class="form-group">
                 <input type="text" name="name" id="name" placeholder="Nombres">
                 <input class="rigth-input" type="lastname" name="lastname" id="lastname" placeholder="Apellidos">

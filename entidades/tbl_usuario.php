@@ -35,10 +35,42 @@ class tbl_usuario extends Conexion {
         $query = mysqli_query($con,$q);
         $row = mysqli_fetch_array($query);
 
-        if($row['usuario'] == $user && $row['pwd'] == $pwd){
+        if($row != null){
             return true;
         }else{
             return false;
+        }
+    }
+
+    public function insertarUsuario($nombres, $apellidos, $email, $usuario, $pwd){
+        $q = "INSERT INTO tbl_usuario (usuario, nombres, apellidos, email, pwd, estado) VALUES ('$usuario', '$nombres', '$apellidos', '$email', '$pwd', 1)";
+        $con = $this->connect();
+        $query = mysqli_query($con,$q);
+    }
+
+    public function searchByEmail($email){
+        $q = "SELECT * FROM tbl_usuario WHERE email = '$email'";
+        $con = $this->connect();
+        $query = mysqli_query($con,$q);
+        $row = mysqli_fetch_array($query);
+
+        if($row != null){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    public function searchByUser($user){
+        $q = "SELECT * FROM tbl_usuario WHERE usuario = '$user'";
+        $con = $this->connect();
+        $query = mysqli_query($con,$q);
+        $row = mysqli_fetch_array($query);
+
+        if($row != null){
+            return false;
+        }else{
+            return true;
         }
     }
 
