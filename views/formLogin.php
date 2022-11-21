@@ -34,7 +34,7 @@ if($_GET['error'] != null){
                 <input class="button" type="submit" value="Iniciar sesión">
             </div>
         </form>
-        <h5 style="margin-top: 20px">¿Aún no tienes cuenta? <span ><a style="color: #3a8aff" href="./formSignin.php">Regístrate aqui</a></span></h5>
+        <h5 style="margin-top: 20px">¿Aún no tienes cuenta? <span ><a style="color: #3a8aff" href="http://localhost:63342/Kermesse/views/formSignin.php?error=0">Regístrate aqui</a></span></h5>
     </div>
 </section>
 <script src="js/login.js"></script>

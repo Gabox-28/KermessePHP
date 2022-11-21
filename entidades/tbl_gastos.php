@@ -1,6 +1,7 @@
 <?php
+include_once '../datos/conexion.php';
 
-class tbl_gastos{
+class tbl_gastos extends Conexion {
     private $id_registro_gasto;
     private $idKermesse;
     private $idCatGastos;
@@ -15,21 +16,6 @@ class tbl_gastos{
     private $fecha_eliminacion;
     private $estado;
 
-    public function __construct($id_registro_gasto, $idKermesse, $idCatGastos, $fechaGasto, $concepto, $monto, $usuario_creacion, $fecha_creacion, $usuario_modificacion, $fecha_modificacion, $usuario_eliminacion, $fecha_eliminacion, $estado){
-        $this->id_registro_gasto = $id_registro_gasto;
-        $this->idKermesse = $idKermesse;
-        $this->idCatGastos = $idCatGastos;
-        $this->fechaGasto = $fechaGasto;
-        $this->concepto = $concepto;
-        $this->monto = $monto;
-        $this->usuario_creacion = $usuario_creacion;
-        $this->fecha_creacion = $fecha_creacion;
-        $this->usuario_modificacion = $usuario_modificacion;
-        $this->fecha_modificacion = $fecha_modificacion;
-        $this->usuario_eliminacion = $usuario_eliminacion;
-        $this->fecha_eliminacion = $fecha_eliminacion;
-        $this->estado = $estado;
-    }
 
     public function __GET($k){
         return $this->$k;
@@ -37,5 +23,19 @@ class tbl_gastos{
 
     public function __SET($k, $v){
         return $this->$k = $v;
+    }
+
+    public function createGasto($concepto, $monto, $categoria, $fechaGasto, $fechaCreacion, $usuario){
+
+        $q = "INSERT INTO tbl_gastos (idKermesse, idCatGastos, fechaGasto, concepto, monto, usuario_creacion, fecha_creacion, estado) VALUES (1,'$categoria','$fechaGasto','$concepto','$monto','$usuario','$fechaCreacion',1)";
+        $con = $this->connect();
+        $query = mysqli_query($con,$q);
+    }
+
+    public function getCategorias(){
+        $q = "SELECT * FROM tbl_categoria_gastos";
+        $con = $this->connect();
+        $query = mysqli_query($con,$q);
+        return $query;
     }
 }

@@ -19,7 +19,7 @@ $bonos = $bono->getBonos();
 <section class="form-container">
     <div class="form">
         <h1 class="title">Comprar tickets</h1>
-        <form action="" method="POST">
+        <form action="ready.php" method="POST">
             <div class="form-group">
                 <?php
                     if($bonos){
@@ -28,13 +28,12 @@ $bonos = $bono->getBonos();
                             $nombre = $row['nombre'];
                             $valor = $row['valor'];
                         ?>
-                            <input class="" type="text" value="<?php echo $nombre?>" readonly>
+                            <input class="" type="text" value="Bono de <?php echo $valor?>" readonly>
                             <input class="rigth-input cant" type="number" name="cant" placeholder="0">
                         <?php
                         }
                     }
                 ?>
-
                 <input class="button" type="submit" value="Comprar">
             </div>
         </form>

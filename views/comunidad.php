@@ -1,12 +1,15 @@
 <?php
 include_once '../entidades/tbl_comunidad.php';
+include_once '../entidades/tbl_productos.php';
 include_once 'headerSO.php';
 
 $idForm = $_GET['ID'];
 
-
 $comunidad = new tbl_comunidad();
 $datos = $comunidad->verComunidad($idForm);
+
+$producto = new tbl_productos();
+$productos = $producto->showProductsByCommunity($idForm);
 ?>
 
 <html>
@@ -40,6 +43,25 @@ $datos = $comunidad->verComunidad($idForm);
                 <img class="img-title" src="img/shop2.jpg" alt="">
             </div>
 
+        </div>
+    </section>
+
+    <section class="products">
+        <h1 class="products-title">Productos</h1>
+        <div class="container-p">
+            <?php
+            if($productos){
+                while($row = $productos->fetch_array()){
+                    $nombre = $row['nombre'];
+                    ?>
+                    <div class="row">
+                        <img class="img" src="../views/img/rosquillas.png" alt="Community image">
+                        <h1><?php echo $nombre?></h1>
+                    </div>
+                    <?php
+                }
+            }
+            ?>
         </div>
     </section>
 </body>

@@ -18,7 +18,7 @@
                 <a href="http://localhost:63342/Kermesse/negocio/manage_comunidades.php">Comunidades</a>
             </li>
             <li>
-                <a href="/">Productos</a>
+                <a href="http://localhost:63342/Kermesse/negocio/manage_productos.php?">Productos</a>
             </li>
             <li>
                 <a href="http://localhost:63342/Kermesse/views/formTickets.php">Bonos</a>

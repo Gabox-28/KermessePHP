@@ -21,7 +21,7 @@
             </li>
 
             <li>
-                <a href="http://localhost:63342/kermesse/negocio/manage_comunidades.php">Productos</a>
+                <a href="http://localhost:63342/Kermesse/negocio/manage_productos.php">Productos</a>
             </li>
         </ul>
     </div>

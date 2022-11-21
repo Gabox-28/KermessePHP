@@ -1,6 +1,7 @@
 <?php
+include_once '../datos/conexion.php';
 
-class tbl_ingreso_comunidad{
+class tbl_ingreso_comunidad extends Conexion{
     private $id_ingreso_comunidad;
     private $id_kermesse;
     private $id_comunidad;
@@ -15,22 +16,28 @@ class tbl_ingreso_comunidad{
     private $usuario_eliminacion;
     private $fecha_eliminacion;
 
-    public function __construct($id_ingreso_comunidad, $id_kermesse, $id_comunidad, $id_producto, $cant_productos, $total_bonos, $estado, $usuario_creacion, $fecha_creacion, $usuario_modificacion, $fecha_modificacion, $usuario_eliminacion, $fecha_eliminacion) {
-        $this->id_ingreso_comunidad = $id_ingreso_comunidad;
-        $this->id_kermesse = $id_kermesse;
-        $this->id_comunidad = $id_comunidad;
-        $this->id_producto = $id_producto;
-        $this->cant_productos = $cant_productos;
-        $this->total_bonos = $total_bonos;
-        $this->estado = $estado;
-        $this->usuario_creacion = $usuario_creacion;
-        $this->fecha_creacion = $fecha_creacion;
-        $this->usuario_modificacion = $usuario_modificacion;
-        $this->fecha_modificacion = $fecha_modificacion;
-        $this->usuario_eliminacion = $usuario_eliminacion;
-        $this->fecha_eliminacion = $fecha_eliminacion;
-    }
 
     public function __GET($k){ return $this->$k; }
     public function __SET($k, $v){ return $this->$k = $v; }
+
+    public function createIngresoComunidad($id_kermesse, $id_comunidad, $id_producto, $cant_productos, $total_bonos, $fecha_creacion, $usuario_creacion){
+        $q = "INSERT INTO tbl_ingreso_comunidad (id_kermesse, id_comunidad, id_producto, cant_productos, total_bonos, estado, usuario_creacion, fecha_creacion) VALUES ('$id_kermesse', '$id_comunidad', '$id_producto', '$cant_productos', '$total_bonos', 1, '$usuario_creacion', '$fecha_creacion')";
+        $con = $this->connect();
+        $query = mysqli_query($con,$q);
+    }
+
+    public function createIngresoComunidadDet($id_ingreso_comunidad, $id_bono, $denominacion, $cantidad, $subtotal_bono){
+        $q = "INSERT INTO tbl_ingreso_comunidad_det (id_ingreso_comunidad, id_bono, denominacion, cantidad, subtotal_bono) VALUES ('$id_ingreso_comunidad', '$id_bono', '$denominacion', '$cantidad', '$subtotal_bono')";
+        $con = $this->connect();
+        $query = mysqli_query($con,$q);
+    }
+
+    public function getLastId(){
+        $q = "SELECT MAX(id_ingreso_comunidad) AS id_ingreso_comunidad FROM tbl_ingreso_comunidad";
+        $con = $this->connect();
+        $query = mysqli_query($con,$q);
+        $row = mysqli_fetch_array($query);
+        return $row['id_ingreso_comunidad'];
+    }
+
 }
