@@ -21,7 +21,7 @@ $dolares = $arqueo->getDolares();
 <section class="form-container">
     <div class="form" style="height: 950px">
         <h1 class="title">Arqueo Caja</h1>
-        <form action="../negocio/gastos.php" method="POST">
+        <form action="../negocio/arqueo.php" method="POST">
             <div class="form-group">
                 <div class="large-input">
                     <input class="large-input" type="text" name="concepto" id="concepto" placeholder="Concepto" required>
@@ -36,7 +36,7 @@ $dolares = $arqueo->getDolares();
                         $valor = $row['valor'];
                         ?>
                         <input class="" type="text" value="<?php echo $valor ?> Córdobas" readonly>
-                        <input class="rigth-input cant" type="number" name="cant<?php echo $inte?>" placeholder="0">
+                        <input class="rigth-input cant" type="number" name="cantC<?php echo $inte?>" placeholder="0">
                         <?php
                         $inte++;
                     }
@@ -52,7 +52,7 @@ $dolares = $arqueo->getDolares();
                         $valor = $row['valor'];
                         ?>
                         <input class="" type="text" value="<?php echo $valor ?> Dolares" readonly>
-                        <input class="rigth-input cant" type="number" name="cant<?php echo $inte?>" placeholder="0">
+                        <input class="rigth-input cant" type="number" name="cantD<?php echo $inte?>" placeholder="0">
                         <?php
                         $inte++;
                     }

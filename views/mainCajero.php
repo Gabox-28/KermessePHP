@@ -25,8 +25,8 @@
     <div class="container-right">
         <div class="row">
             <div class="container">
-                <a href="http://localhost:63342/Kermesse/views/formTickets.php"><img src="../views/img/arqueo.png" alt="Imagen tienda" class="img"></a>
-                <a href="http://localhost:63342/Kermesse/views/formTickets.php"><h2>Arqueo Caja</h2></a>
+                <a href="http://localhost:63342/Kermesse/views/arqueoCaja.php"><img src="../views/img/arqueo.png" alt="Imagen tienda" class="img"></a>
+                <a href="http://localhost:63342/Kermesse/views/arqueoCaja.php"><h2>Arqueo Caja</h2></a>
             </div>
         </div>
     </div>

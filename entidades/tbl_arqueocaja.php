@@ -30,4 +30,25 @@ class tbl_arqueocaja extends Conexion {
         $query = mysqli_query($con,$q);
         return $query;
     }
+
+    public function createArqueoCaja($idKermesse, $fechaArqueo, $granTotal, $usuario_creacion, $fecha_creacion, $estado){
+        $q = "INSERT INTO tbl_arqueocaja (idKermesse, fechaArqueo, granTotal, usuario_creacion, fecha_creacion, estado) VALUES ('$idKermesse', '$fechaArqueo', '$granTotal', '$usuario_creacion', '$fecha_creacion', '$estado')";
+        $con = $this->connect();
+        $query = mysqli_query($con,$q);
+    }
+
+    public function createArqueoCajaDet($idArqueoCaja, $idMoneda, $idDenominacion, $cantidad, $subtotal){
+        $q = "INSERT INTO tbl_arqueocaja_det (idArqueoCaja, idMoneda, idDenominacion, cantidad, subtotal) VALUES ('$idArqueoCaja', '$idMoneda', '$idDenominacion', '$cantidad', '$subtotal')";
+        $con = $this->connect();
+        $query = mysqli_query($con,$q);
+    }
+
+    public function getTasaCambio(){
+        $q = "SELECT * FROM tasacambio_det WHERE id_tasaCambio = 1";
+        $con = $this->connect();
+        $query = mysqli_query($con,$q);
+        $row = mysqli_fetch_array($query);
+
+        return $row['tipoCambio'];
+    }
 }
